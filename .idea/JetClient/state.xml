@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JetClientState">
+    <option name="folders">
+      <list>
+        <folderState>
+          <option name="id" value="cc21ae50-07ab-48ce-8a43-ffb32bd2c87b" />
+          <option name="name" value="Api" />
+          <option name="requests">
+            <list>
+              <requestState>
+                <option name="body">
+                  <bodyState>
+                    <option name="type" value="JSON" />
+                  </bodyState>
+                </option>
+                <option name="headers">
+                  <list>
+                    <headerState>
+                      <option name="key" value="Content-Type" />
+                      <option name="value" value="application/json" />
+                    </headerState>
+                  </list>
+                </option>
+                <option name="id" value="6275c2cb-be2a-4334-b874-1d434e6e7118" />
+                <option name="method" value="GET" />
+                <option name="name" value="healthz" />
+                <option name="url" value="http://localhost:3000/api/healthz" />
+              </requestState>
+              <requestState>
+                <option name="id" value="bdfd62e9-ef4c-4321-8072-4cd4f2d980d6" />
+                <option name="method" value="GET" />
+                <option name="name" value="ping" />
+                <option name="url" value="http://localhost:3000/ping" />
+              </requestState>
+            </list>
+          </option>
+          <option name="sortWeight" value="1000000" />
+          <option name="syncProperties">
+            <synchronizationPropertiesState>
+              <option name="folderPath" value="D:\programming\golang\example-server\.jetclient" />
+            </synchronizationPropertiesState>
+          </option>
+        </folderState>
+      </list>
+    </option>
+    <option name="id" value="b8f4225b-a829-405b-af0c-3dc166498590" />
+  </component>
+</project>
