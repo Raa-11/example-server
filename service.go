@@ -13,7 +13,7 @@ type Response struct {
 	StatusCode int    `json:"status_code"`
 }
 
-func service() http.Handler {
+func service() *chi.Mux {
 	r := chi.NewRouter()
 
 	// Ping

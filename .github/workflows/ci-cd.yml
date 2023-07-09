@@ -31,8 +31,6 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
-    needs:
-      - osv-scanner
     steps:
       - name: Set up Go
         uses: actions/setup-go@v4
@@ -48,5 +46,45 @@ jobs:
           go version
           go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.53.3
           make lint
-          
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    needs:
+      - osv-scanner
+      - lint
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.20'
+          check-latest: true
+
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Build Golang
+        run: |
+          go version
+          make build
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    needs:
+      - build
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.20'
+          check-latest: true
+
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Build Golang
+        run: |
+          go version
+          make test          
       
