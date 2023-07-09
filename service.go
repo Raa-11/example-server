@@ -9,8 +9,8 @@ import (
 )
 
 type Response struct {
-	StatusCode int    `json:"status_code"`
 	Message    string `json:"message"`
+	StatusCode int    `json:"status_code"`
 }
 
 func service() http.Handler {
@@ -19,7 +19,7 @@ func service() http.Handler {
 	// Ping
 	r.Get("/ping", func(w http.ResponseWriter, r *http.Request) {
 		responseBody, e := json.Marshal(Response{
-			StatusCode: 200,
+			StatusCode: http.StatusOK,
 			Message:    "Pong",
 		})
 
@@ -31,7 +31,7 @@ func service() http.Handler {
 
 		w.Header().Set("Content-Type", "application/json")
 		w.WriteHeader(http.StatusOK)
-		w.Write(responseBody)
+		_, _ = w.Write(responseBody)
 	})
 
 	// Headthz Check
@@ -50,10 +50,11 @@ func service() http.Handler {
 
 			w.Header().Set("Content-Type", "application/json")
 			w.WriteHeader(http.StatusOK)
-			w.Write(responseBody)
+			_, _ = w.Write(responseBody)
 			return
 		}
 		w.WriteHeader(http.StatusServiceUnavailable)
 	})
+
 	return r
 }

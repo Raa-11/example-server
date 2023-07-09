@@ -1,3 +1,9 @@
+osv:
+	osv-scanner --lockfile=go.mod
+
+lint:
+	golangci-lint run
+
 dev:
 	go run -mod=vendor . -port="3000"
 
