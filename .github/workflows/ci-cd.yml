@@ -111,7 +111,7 @@ jobs:
         with:
           file: docker/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/${{ vars.DOCKER_IMAGE }}:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ vars.DOCKER_IMAGE }}:latest
   
 #  deployment:
 #    name: Publish to Docker Hub
