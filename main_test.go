@@ -15,7 +15,7 @@ func executeRequest(req *http.Request) *httptest.ResponseRecorder {
 }
 
 func TestPing(t *testing.T) {
-	req, _ := http.NewRequest(http.MethodGet, "/ping", nil)
+	req, _ := http.NewRequest(http.MethodGet, "/ping", http.NoBody)
 
 	resp := executeRequest(req)
 
